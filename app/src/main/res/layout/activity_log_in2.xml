@@ -80,8 +80,7 @@
             android:layout_gravity="center_horizontal"
             android:background="#adddc9"
             android:layout_marginTop="5dp"
-            android:onClick="log_in_button"
-            android:nestedScrollingEnabled="false" />
+            android:onClick="log_in_button" />
 
         <Button
             android:layout_width="wrap_content"
