@@ -15,68 +15,50 @@ import java.sql.Statement;
  */
 public class databaseConnection extends AsyncTask<String, String, Boolean> {
 
-
-    private Connection connection;
+    private static databaseConnection db = null; //instance of this class
+    private static Connection connection;
     private Statement statement;
     private ResultSet resultSet;
-    private boolean valid = false;
     private String query;
+    private String driver = "com.mysql.jdbc.Driver";
+    private String url = "jdbc:mysql://mysql.toury.greasyhacks.com/toury_app";
+    private String username = "toury";
+    private String password = "cen4010team5";
+    private boolean flag = false;
 
-
-
+    //protected constructor for singleton pattern. prevents instantiation from other classes.
+    protected databaseConnection(){}
 
     @Override
-    protected Boolean doInBackground(String... params) {
-
+    public Boolean doInBackground(String... params) {
 
     String username = params[0];
     String password = params[1];
 
-    // Log.e("e @@@@@@@@@@@@@@@@@@", "pass: @@@@@@@@@@@@@ : " + password);
+        if (connection == null)
+            DbConnection();
 
-
-    if(connection == null)//check if allready connected
-            this.DbConnection();
-    // this.getData();
-
-
-    return checkAccount(username, password);
-
-}//end doInBackground
-
-
+        return flag;
+    }
     /**
      * connects to http://www.freesqldatabase.com/ database and retrieves the
      * information
      */
     public void DbConnection() {
         try {
-            String driver = "com.mysql.jdbc.Driver";
             Class.forName(driver);
-
-            String url = "jdbc:mysql://mysql.toury.greasyhacks.com/toury_app";
-            String username = "toury";
-            String password = "cen4010team5";
-
             connection = DriverManager.getConnection(url, username, password);
-
             statement = connection.createStatement();
-
-            //System.out.println("Connected\n");
             Log.e("@@mytag,", "Connected!");
-
+            flag = true;
         } catch (Exception e) {
-            // System.out.println(e);
             Log.e("@@mytag,", "ERROR" + e);
+            flag = false;
         }
 
-    }//end DbConnection
-
-
-    /**
-     * gets all the data
-     */
-    public void getData() {
+    }
+    //This is old code. Unneeded
+    /*public void getData() {
         try {
             query = "select * from User";
             resultSet = statement.executeQuery(query);
@@ -90,7 +72,6 @@ public class databaseConnection extends AsyncTask<String, String, Boolean> {
 
             }
 
-
         } catch (Exception e) {
             // System.out.println(e.getMessage());
             Log.e("@@mytag,", " " + e);
@@ -99,10 +80,9 @@ public class databaseConnection extends AsyncTask<String, String, Boolean> {
 
     }//end getData()
 
-
     public boolean checkAccount(String username, String password) {
 
-        query = "select password from User where user_name = " + "'" + username + "'";
+        query = "select password from User where username = " + "'" + username + "'";
         String passComparison = "";
 
         try {
@@ -111,17 +91,29 @@ public class databaseConnection extends AsyncTask<String, String, Boolean> {
             resultSet.next();
             passComparison = resultSet.getString("password");
 
-
             //Log.e("e @@@@@@@@@@@@@@@@@@", "passComparison: @@@@@@@@@@@@@ : " + passComparison);
-
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
-
         return passComparison.equals(password);
-    }
+    }*/
 
+    //global point of access to get instance of this class. if it's null creates an instance. (only 1 instance possible)
+    public static databaseConnection getInstance() {
+        if (db == null)
+            db = new databaseConnection();
+        return db;
+    }
+    public void disconnect() {
+        try {
+            statement.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    public Connection getCon()  {
+        return connection;
+    }
 
 }

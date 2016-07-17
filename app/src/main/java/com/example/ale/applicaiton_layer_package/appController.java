@@ -1,46 +1,69 @@
 package com.example.ale.applicaiton_layer_package;
 
 import android.app.Activity;
-import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.view.Window;
-import android.widget.EditText;
 import android.widget.ListView;
+
+import java.util.ArrayList;
 
 import database_layer_package.DatabaseRead;
 import database_layer_package.DatabaseUpdate;
 import database_layer_package.databaseConnection;
 
-import java.util.ArrayList;
-import java.util.concurrent.ExecutionException;
-
-
 /**
- * This class controls the logic of the application, as well any code executed on launch.
- * alex 7/11/16
+ * Created by SpeedGrapher on 7/16/2016.
  */
-public class appController extends Activity {
-
-
-    private databaseConnection databaseConn;
-    private DatabaseRead databaseRead;
+public class appController  {
+    static databaseConnection db; //this needs to be static for singleton pattern. Andy
+    private static DatabaseRead databaseRead;
     private DatabaseUpdate databaseUpdate;
     private User user;
 
+    static ArrayList <Object> tour = new ArrayList<>(); //datastructure for the query returning a tour by id. Andy
+    static ArrayList <Integer> follow = new ArrayList<>(); //data structure for User_Follow_Tours. Andy
 
-    /**
-     * on application launch this method will set the content view to the log in(main page)
-     * @param savedInstanceState
-     */
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.log_in);
+    public static boolean connect(String userName, String password) {
+        //input validation for a bug that allowed you to access landing page by entering two blank inputs for user and pw.
+        if (userName.length() == 0 && password.length() == 0) {
+            System.out.println("Why you always lying?");
+            return false;
+        }
+        db = db.getInstance(); //gets the singleton instance. Andy
 
+        //for test purposes: db.execute("admin", "pass");
+        db.doInBackground(userName, password);
+        if (checkAccount(userName, password)) {
+            Log.e("e@@@@@@@@@@@@", "sucessfully logged in!");
+
+            //This here was to test my queries.
+            String firstName = databaseRead.getFirstName(userName);
+            String lastName = databaseRead.getLastName(userName);
+            //String email = databaseRead.getEmail(userName); //need a column in user table for this.
+            tour = databaseRead.getTourById(1); //this is a hardcoded value just for test purposes.
+            follow = databaseRead.userFollowTours(databaseRead.getUserId(userName));
+
+            //Check console for debugging purposes.
+            System.out.println("Username: " + userName);
+            System.out.println("FirstName: " + firstName);
+            System.out.println("LastName: " + lastName);
+
+            for (int i = 0; i < tour.size(); i++)
+                System.out.println("Tour ID = " + 1 + " contains: " + tour.get(i));
+
+            for (int i = 0; i < follow.size(); i++)
+                System.out.println(userName + " is following: " + follow.get(i));
+
+            return true;
+        } else
+            Log.e("e@@@@@@@@@@@@", "error logging! - main log_in.java class");
+        return false;
     }
-
+    //authenticate method. gets the password from the given username using databaseRead and checks
+    //if its the same as the one given by the user.
+    private static boolean checkAccount(String username, String password) {
+        databaseRead = new DatabaseRead();
+        return databaseRead.getPassword(username).equals(password);
+    }
     /**
      * takes in a username and password and returns if they match to the database
      *
@@ -142,6 +165,8 @@ public class appController extends Activity {
         return null;
 
     }
-
+    public static void disconnect() {
+        db.disconnect();
+    }
 
 }
