@@ -3,7 +3,7 @@
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context="client_layer_package.LoginPage"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context="presentation_layer.LoginPage"
 
     android:background="@drawable/b5">
 
@@ -36,13 +36,13 @@
             <EditText
                 android:layout_width="180dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/username"
-                android:autoText="false"
+                android:id="@+id/signupUsername"
                 android:layout_gravity="center_horizontal"
                 android:textAlignment="center"
                 android:text="User Name"
+                android:textColor="#737371"
                 android:textIsSelectable="false"
-                android:textColor="#737371" />
+                android:selectAllOnFocus="true"/>
         </LinearLayout>
 
         <LinearLayout
@@ -62,9 +62,8 @@
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
                 android:ems="10"
-                android:id="@+id/password"
+                android:id="@+id/signupPassword"
                 android:layout_gravity="center_horizontal"
-                android:autoText="false"
                 android:textAlignment="center"
                 android:textColor="#737371"
                 android:text="Passwprd" />
@@ -85,12 +84,10 @@
             <EditText
                 android:layout_width="180dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText"
-                android:autoText="false"
+                android:id="@+id/signupEmail"
                 android:layout_gravity="center_horizontal"
                 android:textAlignment="center"
                 android:text="Email Address"
-                android:textIsSelectable="false"
                 android:textColor="#737371" />
 
         </LinearLayout>
@@ -100,7 +97,7 @@
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:text="Sign Up"
-            android:id="@+id/button"
+            android:id="@+id/signupButton"
             android:layout_gravity="center_horizontal"
             android:background="@drawable/roundbutton"
             android:layout_marginTop="5dp" />

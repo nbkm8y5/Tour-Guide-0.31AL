@@ -1,4 +1,4 @@
-package database_layer_package;
+package data_access_layer;
 
 /**
  * Created by Ale on 6/30/2016.
