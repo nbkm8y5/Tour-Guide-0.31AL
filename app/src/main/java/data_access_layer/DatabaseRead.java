@@ -18,6 +18,28 @@ public class DatabaseRead {
     public DatabaseRead() {
         db = db.getInstance();
     }
+    
+     /**
+     * gets a list of tours (ids) user has created, given username.
+     * @param username
+     * @return array of tour ids corresponding to user
+     */
+    public ArrayList<Integer> getTours(String username)
+    {
+        query = "select tour_id from `User` as u INNER JOIN Create_Tour as c ON u.user_id = c.user_id WHERE username = " + "'" + username + "'";
+        ArrayList<Integer> idArray = new ArrayList<>();
+
+        try {
+        resultSet = db.getCon().createStatement().executeQuery(query);
+        while(resultSet.next()) {
+            idArray.add(resultSet.getInt("tour_id"));
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+        return idArray;
+    }
+    
 
     public int getUserId(String username) {
         query = "select user_id from User where username = " + "'" + username + "'";
