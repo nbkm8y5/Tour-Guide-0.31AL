@@ -21,6 +21,11 @@ public class SignUp_Page extends Activity {
     EditText password;
     EditText email;
     Context context;
+
+    /**
+     *
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +57,9 @@ public class SignUp_Page extends Activity {
         });
     }
 
+    /**
+     *
+     */
     private void goToVerificationPage(){
         runOnUiThread(new Runnable() {
             @Override
@@ -63,6 +71,10 @@ public class SignUp_Page extends Activity {
         Intent verificationPage = new Intent(this, VerificationActivity.class);
         startActivity(verificationPage); //this fires up your activity
     }
+
+    /**
+     *
+     */
     private void fail() {
         runOnUiThread(new Runnable() {
             @Override

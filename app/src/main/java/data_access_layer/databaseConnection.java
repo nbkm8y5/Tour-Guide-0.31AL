@@ -26,8 +26,16 @@ public class databaseConnection { //extends AsyncTask<String, String, Boolean> {
     private boolean flag = false;
 
     //protected constructor for singleton pattern. prevents instantiation from other classes.
-    protected databaseConnection(){}
 
+    /**
+     *
+     */
+    protected databaseConnection() {
+    }
+
+    /**
+     * @return
+     */
     public Boolean connect() {
         if (connection == null)
             DbConnection();
@@ -44,6 +52,7 @@ public class databaseConnection { //extends AsyncTask<String, String, Boolean> {
 
         return flag;
     }*/
+
     /**
      * connects to http://www.freesqldatabase.com/ database and retrieves the
      * information
@@ -63,11 +72,19 @@ public class databaseConnection { //extends AsyncTask<String, String, Boolean> {
     }
 
     //global point of access to get instance of this class. if it's null creates an instance. (only 1 instance possible)
+
+    /**
+     * @return
+     */
     public static databaseConnection getInstance() {
         if (db == null)
             db = new databaseConnection();
         return db;
     }
+
+    /**
+     *
+     */
     public void disconnect() {
         try {
             statement.close();
@@ -76,7 +93,11 @@ public class databaseConnection { //extends AsyncTask<String, String, Boolean> {
             e.printStackTrace();
         }
     }
-    public Connection getCon()  {
+
+    /**
+     * @return
+     */
+    public Connection getCon() {
         return connection;
     }
 

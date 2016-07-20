@@ -15,32 +15,40 @@ public class DatabaseRead {
     ResultSet resultSet;
 
     //when databaseRead is instantiated it gets the singleton instance from dbConnection. Andy
+
+    /**
+     *
+     */
     public DatabaseRead() {
         db = db.getInstance();
     }
-    
-     /**
+
+    /**
      * gets a list of tours (ids) user has created, given username.
+     *
      * @param username
      * @return array of tour ids corresponding to user
      */
-    public ArrayList<Integer> getTours(String username)
-    {
+    public ArrayList<Integer> getTours(String username) {
         query = "select tour_id from `User` as u INNER JOIN Create_Tour as c ON u.user_id = c.user_id WHERE username = " + "'" + username + "'";
         ArrayList<Integer> idArray = new ArrayList<>();
 
         try {
-        resultSet = db.getCon().createStatement().executeQuery(query);
-        while(resultSet.next()) {
-            idArray.add(resultSet.getInt("tour_id"));
+            resultSet = db.getCon().createStatement().executeQuery(query);
+            while (resultSet.next()) {
+                idArray.add(resultSet.getInt("tour_id"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-    } catch (SQLException e) {
-        e.printStackTrace();
-    }
         return idArray;
     }
-    
 
+
+    /**
+     * @param username
+     * @return
+     */
     public int getUserId(String username) {
         query = "select user_id from User where username = " + "'" + username + "'";
         int id = 0;
@@ -54,7 +62,11 @@ public class DatabaseRead {
         return id;
     }
 
-    public String getPassword(String username)  {
+    /**
+     * @param username
+     * @return
+     */
+    public String getPassword(String username) {
         query = "select password from User where username = " + "'" + username + "'";
         String passComparison = "";
         try {
@@ -66,7 +78,12 @@ public class DatabaseRead {
         }
         return passComparison;
     }
-    public String getFirstName(String username)  {
+
+    /**
+     * @param username
+     * @return
+     */
+    public String getFirstName(String username) {
         query = "select first_name from User where username = " + "'" + username + "'";
         String firstname = "";
         try {
@@ -78,7 +95,12 @@ public class DatabaseRead {
         }
         return firstname;
     }
-    public String getLastName(String username)  {
+
+    /**
+     * @param username
+     * @return
+     */
+    public String getLastName(String username) {
         query = "select last_name from User where username = " + "'" + username + "'";
         String lastname = "";
         try {
@@ -90,7 +112,12 @@ public class DatabaseRead {
         }
         return lastname;
     }
-    public boolean checkEmail(String email)  {
+
+    /**
+     * @param email
+     * @return
+     */
+    public boolean checkEmail(String email) {
         query = "select * from User where email = " + "'" + email + "'";
         try {
             resultSet = db.getCon().createStatement().executeQuery(query);
@@ -103,7 +130,12 @@ public class DatabaseRead {
         }
         return false;
     }
-    public String getEmail(String username)  {
+
+    /**
+     * @param username
+     * @return
+     */
+    public String getEmail(String username) {
         query = "select email from User where username = " + "'" + username + "'";
         String email = "";
         try {
@@ -115,12 +147,17 @@ public class DatabaseRead {
         }
         return email;
     }
-    public ArrayList<Object> getTourById(int tourId)  {
+
+    /**
+     * @param tourId
+     * @return
+     */
+    public ArrayList<Object> getTourById(int tourId) {
         ArrayList<Object> tour = new ArrayList<>();
         query = "select * from Tour where tour_id = " + "'" + tourId + "'";
         try {
             resultSet = db.getCon().createStatement().executeQuery(query);
-            while(resultSet.next()) {
+            while (resultSet.next()) {
                 tour.add(resultSet.getObject("name"));
                 tour.add(resultSet.getObject("description"));
                 tour.add(resultSet.getObject("city"));
@@ -137,12 +174,17 @@ public class DatabaseRead {
         }
         return tour;
     }
-    public ArrayList<Integer> userFollowTours(int userId)  {
+
+    /**
+     * @param userId
+     * @return
+     */
+    public ArrayList<Integer> userFollowTours(int userId) {
         ArrayList<Integer> followTours = new ArrayList<>();
         query = "select * from Signup_Tour where user_id = " + "'" + userId + "'";
         try {
             resultSet = db.getCon().createStatement().executeQuery(query);
-            while(resultSet.next()) {
+            while (resultSet.next()) {
                 followTours.add(resultSet.getInt("tour_id"));
             }
             //email = resultSet.getString("first_name");

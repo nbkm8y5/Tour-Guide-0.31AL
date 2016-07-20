@@ -37,6 +37,10 @@ public class LoginPage extends Activity  {
     EditText password;
     Context context;
 
+    /**
+     *
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -77,6 +81,10 @@ public class LoginPage extends Activity  {
             }
         });
     }
+
+    /**
+     *
+     */
     private void goToLanding() {
         /*Notice the use of intent here. This allows you to initialize the java class that is one of your activities.
         /That class which extends activity will then proceed to set its respective ContentView. Note you need to include each java class
@@ -84,10 +92,18 @@ public class LoginPage extends Activity  {
         Intent landingPage = new Intent(this, Landing_Page.class);
         startActivity(landingPage); //this fires up your activity
     }
+
+    /**
+     *
+     */
     private void goToSignUp() {
         Intent signupPage = new Intent(this, SignUp_Page.class);
         startActivity(signupPage); //this fires up your activity
     }
+
+    /**
+     *
+     */
     private void fail(){
         runOnUiThread(new Runnable() {
             @Override

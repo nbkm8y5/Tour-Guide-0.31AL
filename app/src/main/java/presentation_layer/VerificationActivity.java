@@ -20,6 +20,11 @@ public class VerificationActivity extends Activity {
     EditText email;
     EditText code;
     Context context;
+
+    /**
+     *
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +46,10 @@ public class VerificationActivity extends Activity {
             }
         });
     }
+
+    /**
+     *
+     */
     private void backToLogin() {
         Intent loginpage = new Intent(this, LoginPage.class);
         //Note the flag inclusion. This means the new instance of loginpage is not added to the activity stack.

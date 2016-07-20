@@ -3,6 +3,9 @@ package com.example.Team5.logic_layer;
 /**
  * Created by SpeedGrapher on 7/17/2016.
  * Don't touch this class.
+ *
+ * @author Alexander Y. Kleymenov
+ * @version $Revision$
  */
 /*
  *  Licensed to the Apache Software Foundation (ASF) under one or more
@@ -28,7 +31,14 @@ package com.example.Team5.logic_layer;
 
 import java.security.AccessController;
 import java.security.Provider;
+
+/**
+ *
+ */
 public final class JSSEProvider extends Provider {
+    /**
+     *
+     */
     public JSSEProvider() {
         super("HarmonyJSSE", 1.0, "Harmony JSSE Provider");
         AccessController.doPrivileged(new java.security.PrivilegedAction<Void>() {
