@@ -2,6 +2,7 @@ package com.example.Team5.logic_layer;
 
 /**
  * A Tour class to represent a tour.
+ *
  * @author Kathryn Bello - 6/30/2016
  */
 public class Tour {
@@ -18,6 +19,7 @@ public class Tour {
 
     /**
      * Creates a Tour object.
+     *
      * @param id
      * @param name
      * @param desc
@@ -48,7 +50,6 @@ public class Tour {
 
 
     /**
-     *
      * @return id
      */
     public int getID() {
@@ -56,7 +57,6 @@ public class Tour {
     }
 
     /**
-     *
      * @return name
      */
     public String getName() {
@@ -64,7 +64,6 @@ public class Tour {
     }
 
     /**
-     *
      * @return description
      */
     public String getDescription() {
@@ -72,7 +71,6 @@ public class Tour {
     }
 
     /**
-     *
      * @return address line 1
      */
     public String getAddressLine() {
@@ -80,7 +78,6 @@ public class Tour {
     }
 
     /**
-     *
      * @return address line 2
      */
     public String getAptLine() {
@@ -88,7 +85,6 @@ public class Tour {
     }
 
     /**
-     *
      * @return city
      */
     public String getCity() {
@@ -96,7 +92,6 @@ public class Tour {
     }
 
     /**
-     *
      * @return state
      */
     public String getState() {
@@ -104,7 +99,6 @@ public class Tour {
     }
 
     /**
-     *
      * @return zip code
      */
     public String getZip() {
@@ -112,7 +106,6 @@ public class Tour {
     }
 
     /**
-     *
      * @return date of tour
      */
     public String getDate() {
@@ -120,7 +113,6 @@ public class Tour {
     }
 
     /**
-     *
      * @return time of tour
      */
     public String getTime() {
@@ -132,7 +124,6 @@ public class Tour {
 
 
     /**
-     *
      * @param id
      */
     public void setID(int id) {
@@ -140,7 +131,6 @@ public class Tour {
     }
 
     /**
-     *
      * @param name
      */
     public void setName(String name) {
@@ -148,7 +138,6 @@ public class Tour {
     }
 
     /**
-     *
      * @param desc
      */
     public void setDescription(String desc) {
@@ -156,7 +145,6 @@ public class Tour {
     }
 
     /**
-     *
      * @param addr
      */
     public void setAddressLine(String addr) {
@@ -164,7 +152,6 @@ public class Tour {
     }
 
     /**
-     *
      * @param apt
      */
     public void setAptLine(String apt) {
@@ -172,7 +159,6 @@ public class Tour {
     }
 
     /**
-     *
      * @param city
      */
     public void setCity(String city) {
@@ -180,7 +166,6 @@ public class Tour {
     }
 
     /**
-     *
      * @param state
      */
     public void setState(String state) {
@@ -188,7 +173,6 @@ public class Tour {
     }
 
     /**
-     *
      * @param zip
      */
     public void setZip(String zip) {
@@ -196,7 +180,6 @@ public class Tour {
     }
 
     /**
-     *
      * @param date
      */
     public void setDate(String date) {
@@ -204,7 +187,6 @@ public class Tour {
     }
 
     /**
-     *
      * @param time
      */
     public void setTime(String time) {
