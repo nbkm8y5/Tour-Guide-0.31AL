@@ -5,6 +5,7 @@ import java.sql.SQLException;
 
 /**
  * This class updates the database.
+ *
  * @author Kathryn Bello - 6/30/2016
  */
 public class DatabaseUpdate {
@@ -13,10 +14,13 @@ public class DatabaseUpdate {
     private String sql;
     PreparedStatement stmnt;
 
-    public DatabaseUpdate() { conn = conn.getInstance(); }
+    public DatabaseUpdate() {
+        conn = conn.getInstance();
+    }
 
     /**
      * Inserts user data into the User table in the database.
+     *
      * @param id
      * @param userName
      * @param password
@@ -48,11 +52,13 @@ public class DatabaseUpdate {
             stmnt.executeUpdate();
             stmnt.close();
 
-        } catch (SQLException e) {}
+        } catch (SQLException e) {
+        }
     }
 
     /**
      * Inserts tour data into Tour table in the database.
+     *
      * @param tourId
      * @param name
      * @param desc
@@ -97,11 +103,13 @@ public class DatabaseUpdate {
             stmnt.executeUpdate();
             stmnt.close();
 
-        } catch (SQLException e) {}
+        } catch (SQLException e) {
+        }
     }
 
     /**
      * Creates a new row in the SignUp_Tour table in the database with the userId and tourId.
+     *
      * @param tourId
      * @param userId
      */
@@ -122,11 +130,13 @@ public class DatabaseUpdate {
             stmnt.executeUpdate();
             stmnt.close();
 
-        } catch (SQLException e) {}
+        } catch (SQLException e) {
+        }
     }
 
     /**
      * Deletes a row from Tour, Signup_Tour and Create_Tour table in the database.
+     *
      * @param tourId
      */
     public void cancelTour(int tourId) {
@@ -145,7 +155,8 @@ public class DatabaseUpdate {
             stmnt.executeUpdate();
             stmnt.close();
 
-        } catch (SQLException e) {}
+        } catch (SQLException e) {
+        }
     }
 
 }
