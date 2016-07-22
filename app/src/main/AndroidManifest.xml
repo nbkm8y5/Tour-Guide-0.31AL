@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.ale.applicaiton_layer_package" >
+    package="com.example.ale.test_layer" >
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -11,7 +11,7 @@
         android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
 
         <activity
-            android:name="client_layer_package.LoginPage"
+            android:name="presentation_layer.LoginPage"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,7 +19,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="client_layer_package.Landing_Page"/>
+        <activity android:name="presentation_layer.Landing_Page"/>
+        <activity android:name="presentation_layer.SignUp_Page"/>
+        <activity android:name="presentation_layer.VerificationActivity"/>
+        <activity android:name="presentation_layer.Create_Tour"/>
+        <activity android:name="presentation_layer.Browse_Tours"/>
     </application>
 
 </manifest>

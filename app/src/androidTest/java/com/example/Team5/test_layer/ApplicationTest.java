@@ -1,4 +1,4 @@
-package com.example.ale.applicaiton_layer_package;
+package com.example.Team5.test_layer;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
