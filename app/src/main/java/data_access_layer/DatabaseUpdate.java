@@ -21,14 +21,13 @@ public class DatabaseUpdate {
     /**
      * Inserts user data into the User table in the database.
      *
-     * @param id
      * @param userName
      * @param password
      * @param firstName
      * @param lastName
      * @param email
      */
-    public void createUser(int id, String userName, String password,
+    public void createUser(String userName, String password,
                            String firstName, String lastName, String email) {
         try {
             // The mysql insert statement
@@ -37,7 +36,7 @@ public class DatabaseUpdate {
                     + "password,"
                     + "first_name,"
                     + "last_name,"
-                    + "email,"
+                    + "email)"
                     + "VALUES(?,?,?,?,?)";
             stmnt = conn.getCon().prepareStatement(sql);
 

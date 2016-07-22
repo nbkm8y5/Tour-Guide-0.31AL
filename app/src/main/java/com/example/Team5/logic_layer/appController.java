@@ -18,7 +18,7 @@ public class appController extends Activity {
     static databaseConnection db; //this needs to be static for singleton pattern. Andy
     private static DatabaseRead databaseRead = new DatabaseRead();
     private static CodeGenerator code = new CodeGenerator();
-    private DatabaseUpdate databaseUpdate;
+    private static DatabaseUpdate databaseUpdate;
     private User user;
 
     private static String localUsername;
@@ -181,21 +181,29 @@ public class appController extends Activity {
 
     /**
      * will create a new user in the database with the provided information
-     *
-     * @param password
-     * @param userName
-     * @param lastName
-     * @param emailAddress
+     * last edit alex 7/21/16
      */
-    public void createNewUser(String password, String userName, String lastName, String emailAddress) {
-//TODO
-    }
+    public static void createNewUser() {
+
+        databaseUpdate = new DatabaseUpdate();
+        new Thread(new Runnable() {
+            public void run() {
+                //code:
+
+                databaseUpdate.createUser(localUsername, localPassword, "", "", localEmail);
+
+            }
+        }).start();
+
+
+    }//end createNewUser
 
     /**
      * will create a new tour in the database
      */
     public void createTour() {
-//TODO
+//TODO alex
+
     }
 
 

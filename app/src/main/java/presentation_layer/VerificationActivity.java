@@ -39,6 +39,8 @@ public class VerificationActivity extends Activity {
                 context = getApplicationContext();
                 if (appController.verifyCode(email.getText().toString(), code.getText().toString())) {
                     Toast.makeText(context, "Account was succesfully created", Toast.LENGTH_LONG).show();
+                    //adds the user into the database:
+                    appController.createNewUser();
                     backToLogin();
                 }
                 else
