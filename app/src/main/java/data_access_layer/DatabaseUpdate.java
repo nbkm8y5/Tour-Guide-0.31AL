@@ -108,6 +108,32 @@ public class DatabaseUpdate {
     }
 
     /**
+     * Creates a new row in the Create_Tour table in the database with the userId and tourId.
+     * @param userId
+     * @param tourId
+     */
+    public void createTour(int userId, int tourId) {
+        try {
+            // The mysql insert statement
+            sql = "INSERT INTO Create_Tour("
+                    + "user_id,"
+                    + "tour_id) "
+                    + "VALUES(?,?)";
+            stmnt = conn.getCon().prepareStatement(sql);
+
+            // Set values
+            stmnt.setInt(1, userId);
+            stmnt.setInt(2, tourId);
+
+            // Insert
+            stmnt.executeUpdate();
+            stmnt.close();
+
+        } catch (SQLException e) {
+        }
+    }
+
+    /**
      * Creates a new row in the SignUp_Tour table in the database with the userId and tourId.
      *
      * @param tourId

@@ -22,6 +22,8 @@
         <activity android:name="presentation_layer.Landing_Page"/>
         <activity android:name="presentation_layer.SignUp_Page"/>
         <activity android:name="presentation_layer.VerificationActivity"/>
+        <activity android:name="presentation_layer.Create_Tour"/>
+        <activity android:name="presentation_layer.Browse_Tours"/>
     </application>
 
 </manifest>
