@@ -15,8 +15,8 @@ import com.example.Team5.logic_layer.appController;
 public class Landing_Page extends Activity {
 
     /**
-     *
      * Modified by: Kathryn Bello - 7/21/2016
+     *
      * @param savedInstanceState
      */
     @Override
@@ -49,12 +49,13 @@ public class Landing_Page extends Activity {
         });
     }
 
-    /*
-    Android activities are stored in the activity stack.
-    Since we called this activity (which is LandingPage) using finish function takes you back to the previous activity which is login.
-    If you need to go back to a specific activity then use finishActivity() method.
+
+    /**
+     * Android activities are stored in the activity stack.
+     * Since we called this activity (which is LandingPage) using finish function takes you back to the previous activity which is login.
+     * If you need to go back to a specific activity then use finishActivity() method.
+     * TODO
      */
-    //TODO
     private void logoutRedirect() {
         finish();
     }
