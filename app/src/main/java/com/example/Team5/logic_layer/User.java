@@ -31,7 +31,7 @@ public class User {
      * @param un username
      * @param pw password
      */
-    public void User(String un, String pw) {
+    public User(String un, String pw) {
         password = pw;
         userName = un;
     }
@@ -45,7 +45,7 @@ public class User {
      * @param ln
      * @param email
      */
-    public void User(String un, String pw, String fn, String ln, String email) {
+    public User(String un, String pw, String fn, String ln, String email) {
         userName = un;
         password = pw;
         firstName = fn;
