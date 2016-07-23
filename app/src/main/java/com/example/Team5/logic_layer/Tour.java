@@ -20,7 +20,6 @@ public class Tour {
     /**
      * Creates a Tour object.
      *
-     * @param id
      * @param name
      * @param desc
      * @param addr
@@ -31,9 +30,9 @@ public class Tour {
      * @param date
      * @param time
      */
-    public Tour(int id, String name, String desc, String addr, String apt, String city,
+    public Tour( String name, String desc, String addr, String apt, String city,
                 String state, String zip, String date, String time) {
-        this.id = id;
+        //this.id = id;
         this.name = name;
         this.desc = desc;
         this.addr = addr;
@@ -44,6 +43,8 @@ public class Tour {
         this.date = date;
         this.time = time;
     }
+
+
 
 
     // getter methods

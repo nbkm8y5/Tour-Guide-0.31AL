@@ -58,7 +58,6 @@ public class DatabaseUpdate {
     /**
      * Inserts tour data into Tour table in the database.
      *
-     * @param tourId
      * @param name
      * @param desc
      * @param addr
@@ -69,7 +68,7 @@ public class DatabaseUpdate {
      * @param date
      * @param time
      */
-    public void createTour(int tourId, String name, String desc,
+    public void createTour(String name, String desc,
                            String addr, String apt, String city,
                            String state, String zip, String date, String time) {
         try {

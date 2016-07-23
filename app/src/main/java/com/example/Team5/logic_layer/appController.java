@@ -19,8 +19,10 @@ public class appController extends Activity {
     static databaseConnection db; //this needs to be static for singleton pattern. Andy
     private static DatabaseRead databaseRead = new DatabaseRead();
     private static CodeGenerator code = new CodeGenerator();
-    private static DatabaseUpdate databaseUpdate;
+    private static DatabaseUpdate databaseUpdate = new DatabaseUpdate();
+    ;
     private User user;
+    private static Tour creatingTour;
 
     private static String localUsername;
     private static String localPassword;
@@ -199,13 +201,37 @@ public class appController extends Activity {
 
     }//end createNewUser
 
+
     /**
      * will create a new tour in the database
+     * last edit: Alex 7/23/16
      */
-    public void createTour() {
-//TODO alex
+    public static void createTour() {
+         try {
+            /*
+            * params for createTour in databaseUpdate
+      * @param name
+     * @param desc
+     * @param addr
+     * @param apt
+     * @param city
+     * @param state
+     * @param zip
+     * @param date
+     * @param time*/
+        //runs the query on database:
+        databaseUpdate.createTour(creatingTour.getName(), creatingTour.getDescription(),
+                creatingTour.getAddressLine(), creatingTour.getAptLine(),
+                creatingTour.getCity(), creatingTour.getState(),
+                creatingTour.getZip(), creatingTour.getDate(),
+                creatingTour.getTime());
+        Log.e("@@", "query ran for creating tour, createTour -appcontroller");
 
-    }
+        } catch (Exception e) {
+            Log.e("@@", "error on createTour - appcontroller"+e.getMessage());
+        }
+
+    }//end createTour
 
 
     /**
@@ -274,5 +300,10 @@ public class appController extends Activity {
 
     }
 
+
+    /*GETTERS AND SETTERS*/
+    public static void setCreatingTour(Tour tour) {
+        creatingTour = tour;
+    }
 
 }
