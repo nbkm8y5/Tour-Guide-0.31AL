@@ -10,12 +10,13 @@ import com.example.ale.test_layer.R;
 import com.example.Team5.logic_layer.appController;
 
 /**
- *
+ * @author Andy
  */
 public class Landing_Page extends Activity {
 
     /**
      * @param savedInstanceState
+     * @ Modified by Kathryn Bello - 6/23/2016
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,14 +69,17 @@ public class Landing_Page extends Activity {
      */
 
     /**
-     *
+     * @author Kathryn Bello - 6/23/2016
      */
-    private void logoutRedirect() {
-        finish();
+    public void logoutRedirect() {
+        Intent loginpage = new Intent(this, LoginPage.class);
+        loginpage.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        loginpage.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(loginpage);
     }
 
     /**
-     *
+     * @author Kathryn Bello - 6/23/2016
      */
     private void goCreateTours() {
         Intent createToursPage = new Intent(this, Create_Tour.class);
@@ -83,7 +87,7 @@ public class Landing_Page extends Activity {
     }
 
     /**
-     *
+     * @author Kathryn Bello - 6/23/2016
      */
     private void goBrowseTours() {
         Intent browseToursPage = new Intent(this, Browse_Tours.class);
