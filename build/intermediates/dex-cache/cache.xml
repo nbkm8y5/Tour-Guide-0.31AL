@@ -5,7 +5,7 @@
         jar="J:\gitHub\Toury\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         revision="21.1.2"
-        sha1="fc52f33528324a4e953d75f2dc133ce3491f2818">
+        sha1="3c1eab20c66c02a3fe6a19b8f3b8bbb0a71422a2">
         <dex dex="J:\gitHub\Toury\app\build\intermediates\pre-dexed\debug\instant-run_0eed62675a909c1df2a15bf9a56e95c4910e7ec8.jar" />
     </item>
     <item
@@ -23,18 +23,32 @@
         <dex dex="J:\gitHub\Toury\app\build\intermediates\pre-dexed\debug\activation_1d74dc6acd5de445d548f6c41c0a4cf520338806.jar" />
     </item>
     <item
-        jar="J:\gitHub\Toury\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\jars\classes.jar"
-        jumboMode="true"
-        revision="21.1.2"
-        sha1="c95ba8152923e4872e86a82cfcba9a51c0214328">
-        <dex dex="J:\gitHub\Toury\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-22.1.1_3b2e46f8efb6f1370585b67179a0a49912253101.jar" />
-    </item>
-    <item
         jar="J:\gitHub\Toury\app\libs\mysql-connector-java-5.0.8-bin.jar"
         jumboMode="true"
         revision="21.1.2"
         sha1="7b9bfb6c4e4885660378a9c13330915c321f6cca">
         <dex dex="J:\gitHub\Toury\app\build\intermediates\pre-dexed\debug\mysql-connector-java-5.0.8-bin_ace65ef94fa5b4b9311ca417ccce321b6e668111.jar" />
+    </item>
+    <item
+        jar="J:\gitHub\Toury\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="21.1.2"
+        sha1="d98ab05336735e48312da070413e98336469f4b4">
+        <dex dex="J:\gitHub\Toury\app\build\intermediates\pre-dexed\debug\instant-run-bootstrap_a711824151674a3380c3838381b70c7fe7f2e585.jar" />
+    </item>
+    <item
+        jar="J:\gitHub\Toury\app\libs\mail.jar"
+        jumboMode="true"
+        revision="21.1.2"
+        sha1="428e267abff0d10802ccde86b915da2c20471160">
+        <dex dex="J:\gitHub\Toury\app\build\intermediates\pre-dexed\debug\mail_9c27bbcd38bc69b7d071755b86b84bda6b97b885.jar" />
+    </item>
+    <item
+        jar="J:\gitHub\Toury\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.1.1\jars\classes.jar"
+        jumboMode="true"
+        revision="21.1.2"
+        sha1="c95ba8152923e4872e86a82cfcba9a51c0214328">
+        <dex dex="J:\gitHub\Toury\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-22.1.1_3b2e46f8efb6f1370585b67179a0a49912253101.jar" />
     </item>
     <item
         jar="J:\gitHub\Toury\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.1.1\jars\classes.jar"
@@ -56,20 +70,6 @@
         revision="21.1.2"
         sha1="9e070ad32b2700b0343e8e0cccc437733d91ba3a">
         <dex dex="J:\gitHub\Toury\app\build\intermediates\pre-dexed\debug\internal_impl-22.1.1_dfbd5f5854037eb19def4af3bebd808a7e294f00.jar" />
-    </item>
-    <item
-        jar="J:\gitHub\Toury\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        revision="21.1.2"
-        sha1="2e17078d76b1dfaa693cc192b1a6a4dfd25d3e10">
-        <dex dex="J:\gitHub\Toury\app\build\intermediates\pre-dexed\debug\instant-run-bootstrap_a711824151674a3380c3838381b70c7fe7f2e585.jar" />
-    </item>
-    <item
-        jar="J:\gitHub\Toury\app\libs\mail.jar"
-        jumboMode="true"
-        revision="21.1.2"
-        sha1="428e267abff0d10802ccde86b915da2c20471160">
-        <dex dex="J:\gitHub\Toury\app\build\intermediates\pre-dexed\debug\mail_9c27bbcd38bc69b7d071755b86b84bda6b97b885.jar" />
     </item>
 
 </items>

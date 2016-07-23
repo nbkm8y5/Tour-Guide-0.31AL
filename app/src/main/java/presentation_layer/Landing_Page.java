@@ -9,12 +9,12 @@ import com.example.ale.test_layer.R;
 import com.example.Team5.logic_layer.appController;
 
 /**
- *
+ * 
  */
 public class Landing_Page extends Activity {
 
     /**
-     *
+     * 
      *
      * @param savedInstanceState
      */

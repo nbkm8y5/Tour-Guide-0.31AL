@@ -38,7 +38,7 @@ public class Browse_Tours extends Activity {
         new Thread(new Runnable() { // populate the tours array, new thread since it queries db
             public void run() {
 
-                //tourArray = appController.displayAllTours();
+                tourArray = appController.displayAllTours();
                 formattedTourArray = new ArrayList<String>();
 
                 for (int i = 0; i < tourArray.size(); i++)
