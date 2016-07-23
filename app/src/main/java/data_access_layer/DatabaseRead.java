@@ -23,6 +23,29 @@ public class DatabaseRead {
         db = db.getInstance();
     }
 
+
+    /**
+     * gets name and description of all tours (Can be later changed to top 5, etc)
+     *
+     * @return array of tour info
+     */
+    public ArrayList<Object> getAllTours() {
+        query = "select name, description from Tour";
+        ArrayList<Object> tourArray = new ArrayList<>();
+
+        try {
+            resultSet = db.getCon().createStatement().executeQuery(query);
+            while (resultSet.next()) {
+                tourArray.add(resultSet.getObject("name"));
+                tourArray.add(resultSet.getObject("description"));
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return tourArray;
+    }
+
     /**
      * gets a list of tours (ids) user has created, given username.
      *
