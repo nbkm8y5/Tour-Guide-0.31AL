@@ -22,15 +22,17 @@
 
         <ListView
             android:layout_width="wrap_content"
-            android:layout_height="204dp"
-            android:id="@+id/listView"
-            android:layout_weight="0.58" />
+            android:layout_height="0dp"
+            android:id="@+id/listOfTours"
+            android:layout_weight="0.84"
+            android:dividerHeight="40dp"
+            android:layout_marginTop="15dp" />
 
         <Button
             android:layout_width="124dp"
             android:layout_height="67dp"
             android:text="Home"
-            android:id="@+id/button3"
+            android:id="@+id/homeButton"
             android:layout_gravity="center_horizontal" />
 
     </LinearLayout>
