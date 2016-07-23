@@ -39,7 +39,7 @@ public class Browse_Tours extends Activity {
             public void run() {
 
 //                IS THIS THE CORRECT NAME OF THE STATIC METHOD IN APPCONTROLLER?
-                tourArray = appController.displayAllTours();
+                //tourArray = appController.displayAllTours(); //TODO
                 formattedTourArray = new ArrayList<String>();
 
                 for (int i = 0; i < tourArray.size(); i++) {

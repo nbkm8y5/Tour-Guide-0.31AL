@@ -58,6 +58,7 @@ public class DatabaseUpdate {
     /**
      * Inserts tour data into Tour table in the database.
      *
+     * @param tourId
      * @param name
      * @param desc
      * @param addr
@@ -68,7 +69,7 @@ public class DatabaseUpdate {
      * @param date
      * @param time
      */
-    public void createTour(String name, String desc,
+    public void createTour(int tourId, String name, String desc,
                            String addr, String apt, String city,
                            String state, String zip, String date, String time) {
         try {
@@ -96,33 +97,6 @@ public class DatabaseUpdate {
             stmnt.setString(7, zip);
             stmnt.setString(8, date);
             stmnt.setString(9, time);
-
-            // Insert
-            stmnt.executeUpdate();
-            stmnt.close();
-
-        } catch (SQLException e) {
-        }
-    }
-
-    /**
-     * Creates a new row in the Create_Tour table in the database with the userId and tourId.
-     *
-     * @param userId
-     * @param tourId
-     */
-    public void createTour(int userId, int tourId) {
-        try {
-            // The mysql insert statement
-            sql = "INSERT INTO Create_Tour("
-                    + "user_id,"
-                    + "tour_id) "
-                    + "VALUES(?,?)";
-            stmnt = conn.getCon().prepareStatement(sql);
-
-            // Set values
-            stmnt.setInt(1, userId);
-            stmnt.setInt(2, tourId);
 
             // Insert
             stmnt.executeUpdate();
