@@ -15,7 +15,6 @@ import com.example.ale.test_layer.R;
 public class Create_Tour extends Activity {
 
     /**
-     *
      * @param savedInstanceState
      */
     @Override
@@ -49,20 +48,16 @@ public class Create_Tour extends Activity {
 
 
         createTourbutton.setOnClickListener(
-                new View.OnClickListener()
-                {
-                    public void onClick(View v)
-                    {
+                new View.OnClickListener() {
+                    public void onClick(View v) {
 
                     }
                 }
         );
 
         homeButton.setOnClickListener(
-                new View.OnClickListener()
-                {
-                    public void onClick(View v)
-                    {
+                new View.OnClickListener() {
+                    public void onClick(View v) {
                         goToLanding();
                     }
                 }

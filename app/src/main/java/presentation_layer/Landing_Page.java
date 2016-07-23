@@ -20,50 +20,49 @@ public class Landing_Page extends Activity {
      * @param savedInstanceState
      */
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.landing);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.landing);
 
-            Button logoutButton = (Button) (findViewById(R.id.logoutButton));
-            Button createToursButton = (Button) (findViewById(R.id.createToursButton));
-            Button browseToursButton = (Button) (findViewById(R.id.browseToursButton));
-
-
-            logoutButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    appController.disconnect();
-                    logoutRedirect();
-                }
-            });
-
-            createToursButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    new Thread(new Runnable() {
-                        public void run() {
-                            goCreateTours();
-                        }
-                    }).start();
-
-                }
-            });
-
-            browseToursButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    new Thread(new Runnable() {
-                        public void run() {
-                            goBrowseTours();
-                        }
-                    }).start();
-
-                }
-            });
+        Button logoutButton = (Button) (findViewById(R.id.logoutButton));
+        Button createToursButton = (Button) (findViewById(R.id.createToursButton));
+        Button browseToursButton = (Button) (findViewById(R.id.browseToursButton));
 
 
-        }
+        logoutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                appController.disconnect();
+                logoutRedirect();
+            }
+        });
+
+        createToursButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new Thread(new Runnable() {
+                    public void run() {
+                        goCreateTours();
+                    }
+                }).start();
+
+            }
+        });
+
+        browseToursButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new Thread(new Runnable() {
+                    public void run() {
+                        goBrowseTours();
+                    }
+                }).start();
+
+            }
+        });
+
+
+    }
     /*
     Android activities are stored in the activity stack.
     Since we called this activity (which is LandingPage) using finish function takes you back to the previous activity which is login.

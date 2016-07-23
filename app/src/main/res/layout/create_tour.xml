@@ -1,256 +1,254 @@
 <!--TODO-->
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/b2"
+    android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="presentation_layer.LoginPage"
-    android:background="@drawable/b2"
-    >
+    tools:context="presentation_layer.LoginPage">
 
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <Button
+            android:id="@+id/homeButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Home"
-            android:id="@+id/homeButton"
+            android:layout_column="0"
             android:layout_row="0"
-            android:layout_column="0" />
+            android:text="Home" />
 
         <TextView
+            android:id="@+id/textView13"
             android:layout_width="200dp"
             android:layout_height="50dp"
+            android:layout_column="1"
             android:layout_gravity="center_horizontal"
+            android:layout_row="0"
+            android:text="Create Tour page"
             android:textAlignment="center"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Create Tour page"
-            android:id="@+id/textView13"
-            android:layout_row="0"
-            android:layout_column="1"
             android:textColor="#020959" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Tour Name:"
             android:id="@+id/textView"
-            android:layout_row="1"
-            android:layout_column="0" />
-
-        <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:autoText="false"
-            android:layout_gravity="center_horizontal"
-            android:textAlignment="center"
-            android:text="enter tour name here"
-            android:textIsSelectable="false"
-            android:textColor="#060605"
-            android:selectAllOnFocus="true"
+            android:layout_column="0"
+            android:layout_row="1"
+            android:text="Tour Name:"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <EditText
             android:id="@+id/tourName"
-            android:layout_row="1"
-            android:layout_column="1" />
-
-        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Description:"
-            android:id="@+id/textView2"
-            android:layout_row="2"
-            android:layout_column="0" />
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:autoText="false"
-            android:layout_gravity="center_horizontal"
-            android:textAlignment="center"
-            android:text="enter description here"
-            android:textIsSelectable="false"
-            android:textColor="#030301"
-            android:selectAllOnFocus="true"
-            android:id="@+id/tourDesc"
-            android:layout_row="2"
-            android:layout_column="1" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="City:"
-            android:id="@+id/textView6"
-            android:layout_row="3"
-            android:layout_column="0" />
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:autoText="false"
-            android:layout_gravity="center_horizontal"
-            android:textAlignment="center"
-            android:text="enter city name here"
-            android:textIsSelectable="false"
-            android:textColor="#040404"
-            android:selectAllOnFocus="true"
-            android:id="@+id/city"
-            android:layout_row="3"
-            android:layout_column="1" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="State:"
-            android:id="@+id/textView7"
-            android:layout_row="4"
-            android:layout_column="0" />
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:autoText="false"
-            android:layout_gravity="center_horizontal"
-            android:textAlignment="center"
-            android:text="enter state name here"
-            android:textIsSelectable="false"
-            android:textColor="#040404"
-            android:selectAllOnFocus="true"
-            android:id="@+id/state"
-            android:layout_row="4"
-            android:layout_column="1" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Zip Code:"
-            android:id="@+id/textView8"
-            android:layout_row="5"
-            android:layout_column="0" />
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:autoText="false"
-            android:layout_gravity="center_horizontal"
-            android:textAlignment="center"
-            android:text="enter zip code here"
-            android:textIsSelectable="false"
-            android:textColor="#040404"
-            android:selectAllOnFocus="true"
-            android:id="@+id/zipcode"
-            android:layout_row="5"
-            android:layout_column="1" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Date:"
-            android:id="@+id/textView9"
-            android:layout_row="6"
-            android:layout_column="0" />
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:autoText="false"
-            android:layout_gravity="center_horizontal"
-            android:textAlignment="center"
-            android:text="enter tour date here"
-            android:textIsSelectable="false"
-            android:textColor="#020202"
-            android:selectAllOnFocus="true"
-            android:id="@+id/date"
-            android:layout_row="6"
-            android:layout_column="1" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Address 1:"
-            android:id="@+id/textView10"
-            android:layout_row="7"
-            android:layout_column="0" />
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:autoText="false"
-            android:layout_gravity="center_horizontal"
-            android:textAlignment="center"
-            android:text="enter address here"
-            android:textIsSelectable="false"
-            android:textColor="#010101"
-            android:selectAllOnFocus="true"
-            android:id="@+id/address1"
-            android:layout_row="7"
-            android:layout_column="1" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Address 2:"
-            android:id="@+id/textView11"
-            android:layout_row="8"
-            android:layout_column="0" />
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:autoText="false"
-            android:layout_gravity="center_horizontal"
-            android:textAlignment="center"
-            android:text="address continued here"
-            android:textIsSelectable="false"
-            android:textColor="#000000"
-            android:selectAllOnFocus="true"
-            android:id="@+id/address2"
-            android:layout_row="8"
-            android:layout_column="1" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Time:"
-            android:id="@+id/textView12"
-            android:layout_row="9"
-            android:layout_column="0" />
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:autoText="false"
-            android:layout_gravity="center_horizontal"
-            android:textAlignment="center"
-            android:text="enter start time here"
-            android:textIsSelectable="false"
-            android:textColor="#020202"
-            android:selectAllOnFocus="true"
-            android:id="@+id/time"
-            android:layout_row="9"
             android:layout_column="1"
-            android:singleLine="false" />
+            android:layout_gravity="center_horizontal"
+            android:layout_row="1"
+            android:autoText="false"
+            android:selectAllOnFocus="true"
+            android:text="enter tour name here"
+            android:textAlignment="center"
+            android:textColor="#060605"
+            android:textIsSelectable="false" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="2"
+            android:text="Description:"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <EditText
+            android:id="@+id/tourDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_gravity="center_horizontal"
+            android:layout_row="2"
+            android:autoText="false"
+            android:selectAllOnFocus="true"
+            android:text="enter description here"
+            android:textAlignment="center"
+            android:textColor="#030301"
+            android:textIsSelectable="false" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="3"
+            android:text="City:"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <EditText
+            android:id="@+id/city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_gravity="center_horizontal"
+            android:layout_row="3"
+            android:autoText="false"
+            android:selectAllOnFocus="true"
+            android:text="enter city name here"
+            android:textAlignment="center"
+            android:textColor="#040404"
+            android:textIsSelectable="false" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="4"
+            android:text="State:"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <EditText
+            android:id="@+id/state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_gravity="center_horizontal"
+            android:layout_row="4"
+            android:autoText="false"
+            android:selectAllOnFocus="true"
+            android:text="enter state name here"
+            android:textAlignment="center"
+            android:textColor="#040404"
+            android:textIsSelectable="false" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="5"
+            android:text="Zip Code:"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <EditText
+            android:id="@+id/zipcode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_gravity="center_horizontal"
+            android:layout_row="5"
+            android:autoText="false"
+            android:selectAllOnFocus="true"
+            android:text="enter zip code here"
+            android:textAlignment="center"
+            android:textColor="#040404"
+            android:textIsSelectable="false" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="6"
+            android:text="Date:"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <EditText
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_gravity="center_horizontal"
+            android:layout_row="6"
+            android:autoText="false"
+            android:selectAllOnFocus="true"
+            android:text="enter tour date here"
+            android:textAlignment="center"
+            android:textColor="#020202"
+            android:textIsSelectable="false" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="7"
+            android:text="Address 1:"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <EditText
+            android:id="@+id/address1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_gravity="center_horizontal"
+            android:layout_row="7"
+            android:autoText="false"
+            android:selectAllOnFocus="true"
+            android:text="enter address here"
+            android:textAlignment="center"
+            android:textColor="#010101"
+            android:textIsSelectable="false" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="8"
+            android:text="Address 2:"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <EditText
+            android:id="@+id/address2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_gravity="center_horizontal"
+            android:layout_row="8"
+            android:autoText="false"
+            android:selectAllOnFocus="true"
+            android:text="address continued here"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textIsSelectable="false" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="9"
+            android:text="Time:"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <EditText
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_gravity="center_horizontal"
+            android:layout_row="9"
+            android:autoText="false"
+            android:selectAllOnFocus="true"
+            android:singleLine="false"
+            android:text="enter start time here"
+            android:textAlignment="center"
+            android:textColor="#020202"
+            android:textIsSelectable="false" />
 
         <Button
+            android:id="@+id/createTourButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Create Tour"
-            android:id="@+id/createTourButton"
+            android:layout_column="1"
             android:layout_row="10"
-            android:layout_column="1" />
+            android:text="Create Tour" />
 
     </GridLayout>
 </RelativeLayout>
