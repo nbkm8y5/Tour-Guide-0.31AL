@@ -203,14 +203,16 @@ public class appController extends Activity {
     /**
      * will display the tours on the list provided
      *
-     * @param view
      */
-    public void displayTours(ListView view) {
+    public static ArrayList<Object> displayAllTours() {
 //TODO
         /*depending on the user's  preferences it will load from the
         database the name , description and an image. (won't create objects )*/
 //        Browse_Tours.java IS TRYING TO CALL THIS BUT IN BROWSE TOURS IT IS BY A DIFFERENT NAME AND
 //        Browse_Tours.java DOES NOT HAVA A PARAMETER
+
+        ArrayList <Object> tours = databaseRead.getAllTours();
+        return tours;
 
     }
 

@@ -38,11 +38,10 @@ public class Browse_Tours extends Activity {
         new Thread(new Runnable() { // populate the tours array, new thread since it queries db
             public void run() {
 
-//                IS THIS THE CORRECT NAME OF THE STATIC METHOD IN APPCONTROLLER?
                 tourArray = appController.displayAllTours();
                 formattedTourArray = new ArrayList<String>();
 
-                for (int i = 0; i < tourArray.size(); i++) {
+                for (int i = 0; i < tourArray.size(); i++) { //format tour name and description
                     formattedTourArray.add(tourArray.get(i).toString() + " -- " + tourArray.get(++i).toString());
                 }
 
