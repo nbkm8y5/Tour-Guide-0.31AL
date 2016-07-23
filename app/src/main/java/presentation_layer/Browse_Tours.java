@@ -5,12 +5,13 @@ import android.os.Bundle;
 
 import com.example.Team5.logic_layer.appController;
 import com.example.ale.test_layer.R;
+
 import android.view.View;
 import android.widget.ListView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import java.util.ArrayList;
 
+import java.util.ArrayList;
 
 
 /**
@@ -18,11 +19,10 @@ import java.util.ArrayList;
  */
 public class Browse_Tours extends Activity {
 
-    private static ArrayList<Object>tourArray; // array of tour data from db (name and description)
+    private static ArrayList<Object> tourArray; // array of tour data from db (name and description)
     private static ArrayList<String> formattedTourArray; //formatted tour data to be displayed
 
     /**
-     *
      * @param savedInstanceState
      */
     @Override
@@ -38,11 +38,11 @@ public class Browse_Tours extends Activity {
         new Thread(new Runnable() { // populate the tours array, new thread since it queries db
             public void run() {
 
+//                IS THIS THE CORRECT NAME OF THE STATIC METHOD IN APPCONTROLLER?
                 tourArray = appController.displayAllTours();
                 formattedTourArray = new ArrayList<String>();
 
-                for (int i = 0; i < tourArray.size(); i++)
-                {
+                for (int i = 0; i < tourArray.size(); i++) {
                     formattedTourArray.add(tourArray.get(i).toString() + " -- " + tourArray.get(++i).toString());
                 }
 
@@ -60,16 +60,22 @@ public class Browse_Tours extends Activity {
 
     }
 
+    /**
+     *
+     */
     private void populateListView() { // setup the listView with tour info
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.tour_item, formattedTourArray);
 
-        ListView listOfTours = (ListView)findViewById(R.id.listOfTours);
+        ListView listOfTours = (ListView) findViewById(R.id.listOfTours);
 
         listOfTours.setAdapter(adapter);
     }
 
 
+    /**
+     *
+     */
     private void goToHome() {
         finish();
     }

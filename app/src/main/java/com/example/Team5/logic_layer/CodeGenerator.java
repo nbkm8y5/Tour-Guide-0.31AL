@@ -14,6 +14,10 @@ import java.math.BigInteger;
 public final class CodeGenerator {
     private SecureRandom random = new SecureRandom();
 
+    /**
+     *
+     * @return
+     */
     public String getCode() {
         return new BigInteger(30, random).toString(32); //returns a code of length 6. 30 / 5 (32=2^5).
     }

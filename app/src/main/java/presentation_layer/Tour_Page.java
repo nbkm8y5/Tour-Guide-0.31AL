@@ -21,69 +21,30 @@ public class Tour_Page extends Activity {
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        System.out.println("YAY!!!!");
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.landing);
-        Button logoutButton = (Button) (findViewById(R.id.logoutButton));
-        Button createTourButton = (Button) findViewById(R.id.createTourButton);
-        Button browseToursButton = (Button) findViewById(R.id.browseToursButton);
+        setContentView(R.layout.tour_details);
+        Button signUpForTour = (Button) (findViewById(R.id.sign_up_for_tour_button));
 
-        logoutButton.setOnClickListener(new View.OnClickListener() {
-            /**
-             * TODO
-             * @param v
-             */
-            @Override
-            public void onClick(View v) {
-                appController.disconnect();
-                logoutRedirect();
-            }
-        });
 
-        createTourButton.setOnClickListener(new View.OnClickListener() {
+        signUpForTour.setOnClickListener(new View.OnClickListener() {
             /**
              * TODO
              * @param v
              */
             public void onClick(View v) {
+//                Sign up tourist to tour
                 goToCreateTour();
             }
         });
 
-        browseToursButton.setOnClickListener(new View.OnClickListener() {
-            /**
-             * TODO
-             * @param v
-             */
-            public void onClick(View v) {
-                goToBrowseTours();
-            }
-        });
     }
 
 
     /**
-     * Android activities are stored in the activity stack.
-     * Since we called this activity (which is LandingPage) using finish function takes you back to the previous activity which is login.
-     * If you need to go back to a specific activity then use finishActivity() method.
      * TODO
-     */
-    private void logoutRedirect() {
-        finish();
-    }
-
-    /**
-     * TODO
+     * sends tour id to be paired with user id?  help alex
      */
     private void goToCreateTour() {
-        Intent createTourPage = new Intent(this, Create_Tour.class);
-        startActivity(createTourPage);
-    }
-
-    /**
-     * TODO
-     */
-    private void goToBrowseTours() {
         Intent browseToursPage = new Intent(this, Browse_Tours.class);
         startActivity(browseToursPage);
     }

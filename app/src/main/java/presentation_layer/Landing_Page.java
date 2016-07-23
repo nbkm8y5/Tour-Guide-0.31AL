@@ -5,17 +5,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
 import com.example.ale.test_layer.R;
 import com.example.Team5.logic_layer.appController;
 
 /**
- * 
+ *
  */
 public class Landing_Page extends Activity {
 
     /**
-     * 
-     *
      * @param savedInstanceState
      */
     @Override
@@ -68,15 +67,24 @@ public class Landing_Page extends Activity {
     If you need to go back to a specific activity then use finishActivity() method.
      */
 
+    /**
+     *
+     */
     private void logoutRedirect() {
         finish();
     }
 
+    /**
+     *
+     */
     private void goCreateTours() {
         Intent createToursPage = new Intent(this, Create_Tour.class);
         startActivity(createToursPage); //this fires up your activity
     }
 
+    /**
+     *
+     */
     private void goBrowseTours() {
         Intent browseToursPage = new Intent(this, Browse_Tours.class);
         startActivity(browseToursPage); //this fires up your activity

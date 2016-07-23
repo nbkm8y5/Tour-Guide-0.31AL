@@ -66,6 +66,9 @@ public class Create_Tour extends Activity {
 
     }
 
+    /**
+     *
+     */
     private void goToLanding() {
 
         Intent landingPage = new Intent(this, Landing_Page.class);
