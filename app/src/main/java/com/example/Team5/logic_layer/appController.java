@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import data_access_layer.DatabaseRead;
 import data_access_layer.DatabaseUpdate;
 import data_access_layer.databaseConnection;
+import presentation_layer.Browse_Tours;
 
 /**
  * Created by SpeedGrapher on 7/16/2016.
@@ -216,6 +217,8 @@ public class appController extends Activity {
 //TODO
         /*depending on the user's  preferences it will load from the
         database the name , description and an image. (won't create objects )*/
+//        Browse_Tours.java IS TRYING TO CALL THIS BUT IN BROWSE TOURS IT IS BY A DIFFERENT NAME AND
+//        Browse_Tours.java DOES NOT HAVA A PARAMETER
 
     }
 

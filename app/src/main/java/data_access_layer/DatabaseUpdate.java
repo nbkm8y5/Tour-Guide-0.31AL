@@ -108,6 +108,7 @@ public class DatabaseUpdate {
 
     /**
      * Creates a new row in the Create_Tour table in the database with the userId and tourId.
+     *
      * @param userId
      * @param tourId
      */

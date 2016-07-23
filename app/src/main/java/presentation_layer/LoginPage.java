@@ -14,31 +14,26 @@ import com.example.ale.test_layer.R;
 import com.example.Team5.logic_layer.appController;
 
 
-
 /**
- *
  * Created by Andy. README!!!
  * This class is now fully implemented. DO NOT CHANGE.
- *
+ * <p/>
  * IMPORTANT:
  * If you are going to call an appController method that doesn't require to do a database query you do not need
  * to create a new thread. Otherwise android will complaint that you are trying to do it from the main thread.
- *
+ * <p/>
  * For a better understanding look at loginButton.setOnClickListener on this class (the login method in appController makes use of database queries)
  * and confirmButton.setOnClickListener in the VerificationActivity class. (verify code method in appController doesn't access data access layer).
- *
+ * <p/>
  * Also try to understand how you can start and finish activities correctly for better control flow. For a better understanding look at
  * backToLogin() method in VerificationActivity class.
- *
- *
  */
-public class LoginPage extends Activity  {
+public class LoginPage extends Activity {
     EditText username;
     EditText password;
     Context context;
 
     /**
-     *
      * @param savedInstanceState
      */
     @Override
@@ -46,8 +41,8 @@ public class LoginPage extends Activity  {
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.log_in);
-        Button loginButton = (Button)(findViewById(R.id.button2));
-        Button signupButton = (Button)(findViewById(R.id.signupButt));
+        Button loginButton = (Button) (findViewById(R.id.button2));
+        Button signupButton = (Button) (findViewById(R.id.signupButt));
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -104,7 +99,7 @@ public class LoginPage extends Activity  {
     /**
      *
      */
-    private void fail(){
+    private void fail() {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
